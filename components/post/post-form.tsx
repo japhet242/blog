@@ -133,28 +133,26 @@ export function PostForm() {
               </FormItem>
             )}
           />
-          {image2?.length ? (
-            <Image src={image2} width={350} height={350} alt="image téléchargée" />
+           {image?.length ? (
+            <div>
+              <Image src={image} width={350} height={350} alt="image téléchargée" />
+            </div>
+            
           ) : (
-            <UploadComponent urlimage={setImage2} />
+            <div>
+              <div className=" hidden md:block">
+              <UploadComponent urlimage={setImage} />
+            </div>
+            <div className=" md:hidden">
+              <div className=" text-center text-xl font-bold ">
+                ajouter une image <GoArrowDown />
+              </div>
+              <UploadButtonComponent urlimage={setImage} />
+            </div>
+            </div>
+            
+            
           )}
-          <FormField
-            control={form.control}
-            name="content2"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Contenu 2</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Parlez-nous un peu de vous"
-                    className="resize-y min-h-[200px]"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           
           <FormField
             control={form.control}
