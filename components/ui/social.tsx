@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Button } from "./button";
 export function Social() {
     const handleClick = (provider:"github"|"google")=>{
-            signIn(provider)
+            signIn(provider,{callbackUrl:"/"})
     }
     return ( 
         <div className=" mt-8 flex w-full">
