@@ -6,6 +6,7 @@ import { date } from "zod";
 import { SkeletonCard } from "../ui/skeletoncard";
 import { motion } from "framer-motion"
 import { FadeTextDemo } from "../ui/fadetextdemo";
+import { AnimatedListDemo } from "../ui/animationlist";
 
 export default function CardRecentPost({ post }: { post: {
   id: string;
@@ -76,7 +77,8 @@ export default function CardRecentPost({ post }: { post: {
          </article>
            }
            <div className=" pt-10">
-            <FadeTextDemo text1="Pour vous informer" text2="Toujours dans l'actu" text3="Etre informer" text4="Vie goût" />
+            <AnimatedListDemo/>
+            {/* <FadeTextDemo text1="Pour vous informer" text2="Toujours dans l'actu" text3="Etre informer" text4="Vie goût" /> */}
            </div>
              
             
