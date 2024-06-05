@@ -20,7 +20,7 @@ return <div className=" pt-12">
   </div>
    
    <Button variant="link" className=" bg-slate-200">
-    <Link href="/"> ..Aller a la page d'acceul</Link>
+    <Link href="/"> .Aller a la page d'acceul</Link>
    </Button>
     <form
       action={async () => {
