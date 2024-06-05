@@ -36,6 +36,7 @@ import {
 import { selectcategory } from "./selectcategory";
 import { postAction } from "@/action/postaction";
 import { UploadButtonComponent } from "./uploadBotton";
+import { GoArrowDown } from "react-icons/go";
 
 export function PostForm() {
   const [isPending, startTransition] = useTransition();
@@ -106,8 +107,8 @@ export function PostForm() {
               <UploadComponent urlimage={setImage} />
             </div>
             <div className=" md:hidden">
-              <div>
-                ajouter une image
+              <div className=" text-center text-xl font-bold ">
+                ajouter une image <GoArrowDown />
               </div>
               <UploadButtonComponent urlimage={setImage} />
             </div>
