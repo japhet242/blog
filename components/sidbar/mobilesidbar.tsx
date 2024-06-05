@@ -36,7 +36,7 @@ export function MobileSidBar() {
                
             {
                 isOpen && (
-                    <div className="space-x-2 items-center absolute left-0  top-16  backdrop-blur-xl w-full pt-9 pb-3 h-[100vmax]">
+                    <div className="space-x-2 items-center absolute left-0  top-16  backdrop-blur-xl w-full pt-9 pb-3 h-[50vmax]">
                <motion.nav className=" space-x-2 flex flex-col  items-center" whileHover={{ scale: 1.2 }}>
                 <Button>
                     <Link href="/dashboard">Dashboard</Link>
