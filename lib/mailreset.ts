@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function ResetMail({email,token}:{email:string,token:string}) {
-    const url = `http://localhost:3000/auth/new-password?token=${token}`
+    const url = `https://blog-phi-cyan-82.vercel.app/auth/new-password?token=${token}`
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',

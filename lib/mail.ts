@@ -5,7 +5,7 @@ import { string } from 'zod';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail({email,token}:{email:string,token:string}) {
-    const url = `http://localhost:3000/auth/verification-token?token=${token}`
+    const url = `https://blog-phi-cyan-82.vercel.app/auth/verification-token?token=${token}`
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
