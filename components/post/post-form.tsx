@@ -101,7 +101,19 @@ export function PostForm() {
             </div>
             
           ) : (
-            <UploadComponent urlimage={setImage} />
+            <div>
+              <div className=" hidden md:block">
+              <UploadComponent urlimage={setImage} />
+            </div>
+            <div className=" md:hidden">
+              <div>
+                ajouter une image
+              </div>
+              <UploadButtonComponent urlimage={setImage} />
+            </div>
+            </div>
+            
+            
           )}
           <FormField
             control={form.control}
