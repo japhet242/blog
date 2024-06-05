@@ -45,7 +45,7 @@ export default function Card({ posts }: { posts: {
               </div>
             )}
             <div className="group relative">
-              <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+              <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 line-clamp-2">
                 <Link href={`/post/${post.id}`}>
                   <span className="absolute inset-0" />
                   {post.title}
