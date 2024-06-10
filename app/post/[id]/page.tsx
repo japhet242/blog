@@ -102,6 +102,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <div>
         {/* Utilisation de dangerouslySetInnerHTML pour rendre le HTML brut */}
         <div dangerouslySetInnerHTML={{ __html: cleanHtmlContent }} />
+        brut
       </div>
     );
   };
