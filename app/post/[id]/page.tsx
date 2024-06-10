@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-
+import DOMPurify from 'dompurify';
+import React from 'react';
+interface ContentProps {
+  htmlContent: string;
+}
 export default function Page({ params }: { params: { id: string } }) {
     const [post , SetPost ] = useState<{
       id: string;
@@ -25,6 +29,7 @@ export default function Page({ params }: { params: { id: string } }) {
           })
       },[params.id])
 
+      
     return post ? (
 
       post &&  
@@ -72,15 +77,14 @@ export default function Page({ params }: { params: { id: string } }) {
        </div>
      )}
      <div className="group relative">
-       <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-         
-           <span className="absolute inset-0" />
            {post.content2}
-         
-       </h3>
-       <p className="mt-5 text-sm leading-6 text-gray-600">{post.content}</p>
+           {
+           post.content2 && (
+            <ContentComponent htmlContent={post.content2} />
+          )}
+      
      </div>
-     
+      <p className="mt-5 text-sm leading-6 text-gray-600">{post.content}</p>
    </article>
    </motion.div>
 
@@ -90,3 +94,14 @@ export default function Page({ params }: { params: { id: string } }) {
   </span>
     
   }
+  const ContentComponent: React.FC<ContentProps> = ({ htmlContent }) => {
+    // Sanitize le contenu HTML
+    const cleanHtmlContent = DOMPurify.sanitize(htmlContent);
+  
+    return (
+      <div>
+        {/* Utilisation de dangerouslySetInnerHTML pour rendre le HTML brut */}
+        <div dangerouslySetInnerHTML={{ __html: cleanHtmlContent }} />
+      </div>
+    );
+  };
