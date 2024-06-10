@@ -46,12 +46,12 @@ const MenuBar = ({editor}:{editor:Editor | null}) => {
           !editor.can()
             .chain()
             .focus()
-            .toggleList('bullet_list', 'list_item')
+            .toggleStrike()
             .run()
         }
         className={editor.isActive('strike') ? 'is-active' : ''}
       >
-        liste
+        strike
       </Toggle>
       <Toggle
         onClick={() => editor.chain().focus().toggleCode().run()}

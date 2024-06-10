@@ -29,10 +29,7 @@ export default function Tiptap({
 
   return (
     <div>
-      <div> 
-         <MenuBar editor={editor} />
-      </div>
-     
+      <MenuBar editor={editor}/>
       <EditorContent editor={editor} />
     </div>
     
