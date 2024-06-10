@@ -9,7 +9,7 @@ export async function sendEmail({email,token}:{email:string,token:string}) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
-      to: email,
+      to: "nguainoly@gmail.com",
       subject: 'confimation de la creation du compte',
       html:`<div>
             <h3>verifier le compte</h3>

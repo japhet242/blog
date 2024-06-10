@@ -37,6 +37,9 @@ import { selectcategory } from "./selectcategory";
 import { postAction } from "@/action/postaction";
 import { UploadButtonComponent } from "./uploadBotton";
 import { GoArrowDown } from "react-icons/go";
+import Tiptap from "../Tiptap/Tiptap";
+
+
 
 export function PostForm() {
   const [isPending, startTransition] = useTransition();
@@ -145,11 +148,7 @@ export function PostForm() {
               <FormItem>
                 <FormLabel>Contenu 2</FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Parlez-nous un peu de vous"
-                    className="resize-y min-h-[200px]"
-                    {...field}
-                  />
+                 <Tiptap description="" onChange={field.onChange}/>
                 </FormControl>
                 <FormMessage />
               </FormItem>

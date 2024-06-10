@@ -5,6 +5,7 @@ import { z } from "zod"
 import bcrypt from "bcryptjs"
 import { generateToken } from "@/lib/token"
 import { sendEmail } from "@/lib/mail"
+import { ResetMail } from "@/lib/mailreset"
 
 
 export async function register(values: z.infer<typeof registerSchema>) {
@@ -46,7 +47,7 @@ export async function register(values: z.infer<typeof registerSchema>) {
         // Simuler l'envoi d'un e-mail de confirmation
         // await sendConfirmationEmail(email)
         const tokengenerate = await generateToken(email)
-        await sendEmail({email,token:tokengenerate.token})
+       await sendEmail({email:tokengenerate.email,token:tokengenerate.token})
         
         return { success: "Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte." }
     } catch (err) {

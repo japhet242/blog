@@ -20,7 +20,7 @@ export async function login(values: z.infer<typeof loginSchema>) {
         return {error:"le compte n'existe pas"}
     }
     if (!validated.emailVerified) {
-        return {succes:"email de confirmation evonyer"}
+        return {succes:"email de confirmation evonyer veiller d'abord confirmer la creation de votre compte car un email de confirmation a ete envoyer"}
     }
 
 try {

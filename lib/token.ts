@@ -1,3 +1,4 @@
+"use server"
 import { v4 as uuidv4 } from 'uuid';
 import prisma from './db';
 
@@ -13,9 +14,12 @@ export async function generateToken(email:string) {
         where:{id:verificatedToken.id}
        }) 
     }
-    return {
-        email,
-        token,
-        expires
-    }
+    const creatToken = await prisma.verificationToken.create({
+        data:{
+            email,
+            token,
+            expires
+        }
+    })
+    return creatToken
 }
