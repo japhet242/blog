@@ -79,7 +79,7 @@ export default function Page({ params }: { params: { id: string } }) {
       </article>
     </motion.div>
   ) : (
-    <span className="relative flex h-3 w-full ml-6">
+    <span className="relative flex h-3 w-full ml-6" >
       <span className="animate-ping absolute h-full w-[200px] rounded-full bg-sky-400 opacity-75 mb-3 p-2">chargement...</span>
       <span className="relative inline-flex rounded-full h-3 w-10 bg-sky-500 p-2"></span>
     </span>
